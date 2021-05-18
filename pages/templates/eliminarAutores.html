@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<style>
+		body{
+			
+			background-image:url("{% static 'img/2.jpg' %}");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 1400px 700px;
+		}
+		#div1_m{
+			background-color: rgba(172, 16, 16, 0.829);
+			width: 1300px;
+			height: 100px;
+		}
+		#div_1,#div_2,#div_3,#div_4{
+			float: left;
+			width: 25%;
+			text-align:center;
+			padding-top:40px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			
+		}
+        #li_nombres{
+            text-align: center;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            list-style: none;
+            color: white;
+            padding-top: 10px;
+            
+        }
+        #li_nombres1{
+            text-align: center;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            list-style: none;
+            color: white;
+            padding-top: 10px;
+            padding-left: 55px;
+            padding-right: 55px;
+            
+        }
+        #imagen_1_d{
+            padding-top: 50px;
+            height: 300px;
+            width: 250px;
+            padding-left: 35%;
+        }
+        #div_4{
+            background-color: white;
+            text-align:center;
+			padding-top:40px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+            height: 60px;
+        }
+        a{
+            text-decoration:none;
+            font-family: Arial, Helvetica, sans-serif;
+			font-size: 20px;
+            color: black;
+        }
+        a:hover{
+			color: red;
+			text-decoration:none;
+		}
+        p label{
+            color: white;
+            padding-left: 500px;
+           
+        }
+        p textarea{
+            height: 20px;
+            width: 300px;
+        }
+      
+        #btn_guardar{
+            margin-left: 650px;
+            width: 120px;
+            height: 50px;
+            border-color: rgba(16, 156, 221, 0.829);
+            background-color: rgba(16, 156, 221, 0.829);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+     
+	</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial.scale">
+	<title></title>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+
+<body>
+<h1>"Conocete" Libreria</h1>
+<h2>Encuentra El Libro Que Has Estado Buscando  </h2>
+
+<div id="div1_m">
+	<div id="div_1"><a href="{% url 'home' %}">Home</a></div>
+	<div id="div_2"><a href="{% url 'mangas' %}">Mangas</a></div>
+	<div id="div_3"><a href="{% url 'revistas' %}">Revistas</a></div>
+	<div id="div_4"><a href="{% url 'Autores' %}">Autores</a></div>
+</div>
+
+
+
+<br><br>
+
+<!--Formulario para eliminar-->
+{% block content %}
+<h1>Seguro que deseas eliminar este registro?</h1>
+<form action="" method="post">{% csrf_token %} 
+    {{form.as_p}}
+<input type="submit" value="Confirmar" id="btn_guardar"> 
+</form>
+{%endblock content %}
+
+
+
+
+
+</body>
+</html>

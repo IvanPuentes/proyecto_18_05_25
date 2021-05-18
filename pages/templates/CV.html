@@ -1,0 +1,10 @@
+         <!--boton de guardado-->
+         {% block content %}
+         <h1> Agregar CV</h1>
+         <form action="" method="post">{% csrf_token %} 
+             {{form.as_p}}
+         <input type="submit" value="Guardar" id="btn_guardar"> 
+         </form>
+         {%endblock content %}
+         </div>
+         

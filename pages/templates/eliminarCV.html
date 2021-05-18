@@ -1,0 +1,9 @@
+<!--Formulario para eliminar-->
+{% block content %}
+<h1>Seguro que deseas eliminar este registro?</h1>
+<form action="" method="post">{% csrf_token %} 
+    {{form.as_p}}
+<input type="submit" value="Confirmar" id="btn_guardar"> 
+</form>
+{%endblock content %}
+
